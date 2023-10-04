@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_QLXuatKhauGaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DangNhap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="matkhau" Type="nvarchar" MaxLength="30" />
+          <Property Name="isAdmin" Type="int" />
+        </EntityType>
+        <EntityType Name="DanhMuc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="50" />
+          <Property Name="mota" Type="nvarchar(max)" />
+          <Property Name="thue" Type="float" />
+        </EntityType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="100" />
+          <Property Name="diachi" Type="nvarchar(max)" />
+          <Property Name="sdt" Type="varchar" MaxLength="12" />
+          <Property Name="login_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhanQuyen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mota" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="SanPham">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DanhMuc_id" Type="int" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="mota" Type="nvarchar(max)" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="trongluong" Type="float" />
+          <Property Name="gia" Type="float" Nullable="false" />
+          <Property Name="hinhanh" Type="varchar(max)" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="ngaysua" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_DangNhap_PhanQuyen">
+          <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="0..1" />
+          <End Role="DangNhap" Type="Self.DangNhap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhanQuyen">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DangNhap">
+              <PropertyRef Name="isAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KhachHang_DangNhap">
+          <End Role="DangNhap" Type="Self.DangNhap" Multiplicity="1" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DangNhap">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="KhachHang">
+              <PropertyRef Name="login_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SanPham_DanhMuc">
+          <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="1" />
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DanhMuc">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SanPham">
+              <PropertyRef Name="DanhMuc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_QLXuatKhauGaoModelStoreContainer">
+          <EntitySet Name="DangNhap" EntityType="Self.DangNhap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DangNhap_PhanQuyen" Association="Self.FK_DangNhap_PhanQuyen">
+            <End Role="PhanQuyen" EntitySet="PhanQuyen" />
+            <End Role="DangNhap" EntitySet="DangNhap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KhachHang_DangNhap" Association="Self.FK_KhachHang_DangNhap">
+            <End Role="DangNhap" EntitySet="DangNhap" />
+            <End Role="KhachHang" EntitySet="KhachHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SanPham_DanhMuc" Association="Self.FK_SanPham_DanhMuc">
+            <End Role="DanhMuc" EntitySet="DanhMuc" />
+            <End Role="SanPham" EntitySet="SanPham" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_QLXuatKhauGaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DangNhap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="matkhau" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="isAdmin" Type="Int32" />
+          <NavigationProperty Name="PhanQuyen" Relationship="Self.FK_DangNhap_PhanQuyen" FromRole="DangNhap" ToRole="PhanQuyen" />
+          <NavigationProperty Name="KhachHangs" Relationship="Self.FK_KhachHang_DangNhap" FromRole="DangNhap" ToRole="KhachHang" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DanhMuc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="thue" Type="Double" />
+          <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_DanhMuc" FromRole="DanhMuc" ToRole="SanPham" />
+        </EntityType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="login_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DangNhap" Relationship="Self.FK_KhachHang_DangNhap" FromRole="KhachHang" ToRole="DangNhap" />
+        </EntityType>
+        <EntityType Name="PhanQuyen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mota" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DangNhaps" Relationship="Self.FK_DangNhap_PhanQuyen" FromRole="PhanQuyen" ToRole="DangNhap" />
+        </EntityType>
+        <EntityType Name="SanPham">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DanhMuc_id" Type="Int32" Nullable="false" />
+          <Property Name="ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="trongluong" Type="Double" />
+          <Property Name="gia" Type="Double" Nullable="false" />
+          <Property Name="hinhanh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="ngaysua" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DanhMuc" Relationship="Self.FK_SanPham_DanhMuc" FromRole="SanPham" ToRole="DanhMuc" />
+        </EntityType>
+        <Association Name="FK_DangNhap_PhanQuyen">
+          <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="0..1" />
+          <End Role="DangNhap" Type="Self.DangNhap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhanQuyen">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DangNhap">
+              <PropertyRef Name="isAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KhachHang_DangNhap">
+          <End Role="DangNhap" Type="Self.DangNhap" Multiplicity="1" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DangNhap">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="KhachHang">
+              <PropertyRef Name="login_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SanPham_DanhMuc">
+          <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="1" />
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DanhMuc">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SanPham">
+              <PropertyRef Name="DanhMuc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_QLXuatKhauGaoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DangNhaps" EntityType="Self.DangNhap" />
+          <EntitySet Name="DanhMucs" EntityType="Self.DanhMuc" />
+          <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+          <EntitySet Name="PhanQuyens" EntityType="Self.PhanQuyen" />
+          <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+          <AssociationSet Name="FK_DangNhap_PhanQuyen" Association="Self.FK_DangNhap_PhanQuyen">
+            <End Role="PhanQuyen" EntitySet="PhanQuyens" />
+            <End Role="DangNhap" EntitySet="DangNhaps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KhachHang_DangNhap" Association="Self.FK_KhachHang_DangNhap">
+            <End Role="DangNhap" EntitySet="DangNhaps" />
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SanPham_DanhMuc" Association="Self.FK_SanPham_DanhMuc">
+            <End Role="DanhMuc" EntitySet="DanhMucs" />
+            <End Role="SanPham" EntitySet="SanPhams" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_QLXuatKhauGaoModelStoreContainer" CdmEntityContainer="DB_QLXuatKhauGaoEntities">
+          <EntitySetMapping Name="DangNhaps">
+            <EntityTypeMapping TypeName="DB_QLXuatKhauGaoModel.DangNhap">
+              <MappingFragment StoreEntitySet="DangNhap">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DanhMucs">
+            <EntityTypeMapping TypeName="DB_QLXuatKhauGaoModel.DanhMuc">
+              <MappingFragment StoreEntitySet="DanhMuc">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="thue" ColumnName="thue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhachHangs">
+            <EntityTypeMapping TypeName="DB_QLXuatKhauGaoModel.KhachHang">
+              <MappingFragment StoreEntitySet="KhachHang">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhanQuyens">
+            <EntityTypeMapping TypeName="DB_QLXuatKhauGaoModel.PhanQuyen">
+              <MappingFragment StoreEntitySet="PhanQuyen">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SanPhams">
+            <EntityTypeMapping TypeName="DB_QLXuatKhauGaoModel.SanPham">
+              <MappingFragment StoreEntitySet="SanPham">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="DanhMuc_id" ColumnName="DanhMuc_id" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="trongluong" ColumnName="trongluong" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
