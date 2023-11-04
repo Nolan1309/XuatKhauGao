@@ -25,10 +25,18 @@ namespace QL_XuatKhauGao.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DangNhap> DangNhaps { get; set; }
+        public virtual DbSet<Dangnhap> DangNhaps { get; set; }
         public virtual DbSet<DanhMuc> DanhMucs { get; set; }
-        public virtual DbSet<KhachHang> KhachHangs { get; set; }
+        public virtual DbSet<khachhang> KhachHangs { get; set; }
         public virtual DbSet<PhanQuyen> PhanQuyens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
+        public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
+        public virtual DbSet<HoaDon> HoaDons { get; set; }
+        public virtual DbSet<ChiTietLC> ChiTietLCs { get; set; }
+        public virtual DbSet<NgayQuyetDinh> NgayQuyetDinhs { get; set; }
+        public virtual DbSet<nhanvien> NhanViens { get; set; }
+        public virtual DbSet<PhongBan> PhongBans { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<VanChuyen> VanChuyens { get; set; }
     }
 }

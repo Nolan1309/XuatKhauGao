@@ -32,15 +32,16 @@ namespace QL_XuatKhauGao
             {
                 try
                 {
-                    DB_QLXuatKhauGaoEntities db = new DB_QLXuatKhauGaoEntities();
-                    DangNhap user = db.DangNhaps.Where(item => uiTextBox3.Text == item.email && uiTextBox1.Text == item.matkhau).FirstOrDefault();
+                    //DB_QLXuatKhauGaoEntities db = new DB_QLXuatKhauGaoEntities();
+                    Final_XuatKhauGaoEntities1 db = new Final_XuatKhauGaoEntities1();
+                    Dangnhap user = db.Dangnhaps.Where(item => uiTextBox3.Text == item.tendangnhap && uiTextBox1.Text == item.matkhau).FirstOrDefault();
                     if (user != null)
                     {
-                        Properties.Settings.Default.username = user.email;
+                        Properties.Settings.Default.username = user.tendangnhap;
                         Properties.Settings.Default.password = user.matkhau;
                         Properties.Settings.Default.Save();
 
-                        if (user.PhanQuyen.ten == "admin")
+                        if (user.PhanQuyen.tenQuyen == "Admin")
                         {
                             Form_Dashboard form_admin = new Form_Dashboard(user);
                             this.Hide();
@@ -80,11 +81,11 @@ namespace QL_XuatKhauGao
             string matkhau = Properties.Settings.Default.password;
             if(email != null && matkhau != null)
             {
-                DB_QLXuatKhauGaoEntities db = new DB_QLXuatKhauGaoEntities();
-                DangNhap user = db.DangNhaps.Where(item => email == item.email && matkhau == item.matkhau).FirstOrDefault();
+                Final_XuatKhauGaoEntities1 db = new Final_XuatKhauGaoEntities1();
+                Dangnhap user = db.Dangnhaps.Where(item => email == item.tendangnhap && matkhau == item.matkhau).FirstOrDefault();
                 if (user != null)
                 {
-                    if (user.PhanQuyen.ten == "admin")
+                    if (user.PhanQuyen.tenQuyen == "Admin")
                     {
                         Form_Dashboard form_admin = new Form_Dashboard(user);
                         this.Hide();
@@ -110,6 +111,19 @@ namespace QL_XuatKhauGao
             this.Hide();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void uiLinkLabel2_Click(object sender, EventArgs e)
+        {
+            SeachHDS formseach = new SeachHDS();
+            this.Hide();
+            formseach.ShowDialog();
+            this.Close();
+        }
+
+        private void mes_error_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -73,6 +73,16 @@ namespace QL_XuatKhauGao.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3844432_magnifier_search_zoom_110300 {
+            get {
+                object obj = ResourceManager.GetObject("3844432-magnifier-search-zoom_110300", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3844470_home_house_110332 {
             get {
                 object obj = ResourceManager.GetObject("3844470-home-house_110332", resourceCulture);
@@ -133,6 +143,16 @@ namespace QL_XuatKhauGao.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap excel_office_4658 {
+            get {
+                object obj = ResourceManager.GetObject("excel_office_4658", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap executive_person_icon_icons_com_72414 {
             get {
                 object obj = ResourceManager.GetObject("executive_person_icon-icons.com_72414", resourceCulture);
@@ -153,9 +173,29 @@ namespace QL_XuatKhauGao.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login_arrow_symbol_entering_back_into_a_square_icon_icons_com_73221 {
+            get {
+                object obj = ResourceManager.GetObject("login-arrow-symbol-entering-back-into-a-square_icon-icons.com_73221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus_new_create_more_icon_192478 {
             get {
                 object obj = ResourceManager.GetObject("plus_new_create_more_icon_192478", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shoppingcart_120371 {
+            get {
+                object obj = ResourceManager.GetObject("shoppingcart_120371", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

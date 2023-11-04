@@ -14,17 +14,24 @@ namespace QL_XuatKhauGao.Models
     
     public partial class SanPham
     {
-        public int id { get; set; }
-        public int DanhMuc_id { get; set; }
-        public string ten { get; set; }
-        public string mota { get; set; }
-        public Nullable<int> soluong { get; set; }
-        public Nullable<double> trongluong { get; set; }
-        public double gia { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SanPham()
+        {
+            this.ChiTietHoaDons = new HashSet<ChiTietHoaDon>();
+        }
+    
+        public int MaSanPham { get; set; }
+        public Nullable<int> CategoryID { get; set; }
+        public string TenSanPham { get; set; }
+        public string MoTa { get; set; }
+        public Nullable<int> Soluong { get; set; }
+        public Nullable<double> truongluong { get; set; }
+        public Nullable<double> Gia { get; set; }
         public string hinhanh { get; set; }
         public Nullable<System.DateTime> ngaytao { get; set; }
-        public Nullable<System.DateTime> ngaysua { get; set; }
     
-        public virtual DanhMuc DanhMuc { get; set; }
+        public virtual Category Category { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
     }
 }

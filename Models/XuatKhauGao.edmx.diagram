@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b1bb8a0e15e2433183252151d0b44368" Name="Diagram1">
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.Category" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.ChiTietHoaDon" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.ChiTietLC" Width="1.5" PointX="9.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.Dangnhap" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.HinhThucThanhToan" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.HoaDon" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.khachhang" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.NgayQuyetDinh" Width="1.5" PointX="9.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.nhanvien" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.PhanQuyen" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.PhongBan" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.QuocGia" Width="1.5" PointX="10.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.SanPham" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.sysdiagram" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Final_XuatKhauGaoModel.VanChuyen" Width="1.5" PointX="12.75" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__SanPham__Categor__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__ChiTietHo__MaHoa__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__ChiTietHo__MaSan__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__ChiTietLC__idHoa__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK_Dangnhap_PhanQuyen" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK_khachhang_dangnhap" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.fk_nhanvien_dangnhap" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK_HoaDon_HinhThucThanhToan" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__HoaDon__MaKhachH__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__HoaDon__Manhanvi__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__NgayQuyet__idHoa__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__VanChuyen__idHoa__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.fk_nhanvien_phongban" ManuallyRouted="false" />
+        <AssociationConnector Association="Final_XuatKhauGaoModel.FK__VanChuyen__idQuo__60A75C0F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

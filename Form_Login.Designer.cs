@@ -32,6 +32,7 @@ namespace QL_XuatKhauGao
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uiLinkLabel2 = new Sunny.UI.UILinkLabel();
             this.uiLinkLabel1 = new Sunny.UI.UILinkLabel();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.uiButton3 = new Sunny.UI.UIButton();
@@ -68,7 +69,7 @@ namespace QL_XuatKhauGao
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.uiLabel1.Location = new System.Drawing.Point(195, 79);
             this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(203, 36);
+            this.uiLabel1.Size = new System.Drawing.Size(162, 29);
             this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel1.TabIndex = 3;
             this.uiLabel1.Text = "ĐĂNG NHẬP";
@@ -76,6 +77,7 @@ namespace QL_XuatKhauGao
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.uiLinkLabel2);
             this.panel1.Controls.Add(this.uiLinkLabel1);
             this.panel1.Controls.Add(this.uiButton1);
             this.panel1.Controls.Add(this.uiButton3);
@@ -92,6 +94,23 @@ namespace QL_XuatKhauGao
             this.panel1.Size = new System.Drawing.Size(564, 556);
             this.panel1.TabIndex = 1;
             // 
+            // uiLinkLabel2
+            // 
+            this.uiLinkLabel2.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
+            this.uiLinkLabel2.AutoSize = true;
+            this.uiLinkLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLinkLabel2.ForeColor = System.Drawing.Color.Black;
+            this.uiLinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.uiLinkLabel2.Location = new System.Drawing.Point(369, 495);
+            this.uiLinkLabel2.Name = "uiLinkLabel2";
+            this.uiLinkLabel2.Size = new System.Drawing.Size(129, 19);
+            this.uiLinkLabel2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLinkLabel2.TabIndex = 13;
+            this.uiLinkLabel2.TabStop = true;
+            this.uiLinkLabel2.Text = "Tìm kiếm hóa đơn";
+            this.uiLinkLabel2.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.uiLinkLabel2.Click += new System.EventHandler(this.uiLinkLabel2_Click);
+            // 
             // uiLinkLabel1
             // 
             this.uiLinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(155)))), ((int)(((byte)(40)))));
@@ -101,7 +120,7 @@ namespace QL_XuatKhauGao
             this.uiLinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
             this.uiLinkLabel1.Location = new System.Drawing.Point(81, 495);
             this.uiLinkLabel1.Name = "uiLinkLabel1";
-            this.uiLinkLabel1.Size = new System.Drawing.Size(184, 20);
+            this.uiLinkLabel1.Size = new System.Drawing.Size(157, 17);
             this.uiLinkLabel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiLinkLabel1.TabIndex = 12;
             this.uiLinkLabel1.TabStop = true;
@@ -159,6 +178,7 @@ namespace QL_XuatKhauGao
             this.uiTextBox1.Size = new System.Drawing.Size(417, 60);
             this.uiTextBox1.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBox1.TabIndex = 1;
+            this.uiTextBox1.Text = "user1";
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox1.Watermark = "";
             this.uiTextBox1.TextChanged += new System.EventHandler(this.uiTextBox3_TextChanged);
@@ -169,7 +189,7 @@ namespace QL_XuatKhauGao
             this.uiLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.uiLabel3.Location = new System.Drawing.Point(77, 271);
             this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(77, 20);
+            this.uiLabel3.Size = new System.Drawing.Size(66, 17);
             this.uiLabel3.TabIndex = 11;
             this.uiLabel3.Text = "Mật khẩu";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -190,6 +210,7 @@ namespace QL_XuatKhauGao
             this.uiTextBox3.Size = new System.Drawing.Size(417, 60);
             this.uiTextBox3.Style = Sunny.UI.UIStyle.Custom;
             this.uiTextBox3.TabIndex = 0;
+            this.uiTextBox3.Text = "user1@gmail.com";
             this.uiTextBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox3.Watermark = "";
             this.uiTextBox3.TextChanged += new System.EventHandler(this.uiTextBox3_TextChanged);
@@ -204,6 +225,7 @@ namespace QL_XuatKhauGao
             this.mes_error.Style = Sunny.UI.UIStyle.Custom;
             this.mes_error.TabIndex = 9;
             this.mes_error.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mes_error.Click += new System.EventHandler(this.mes_error_Click);
             // 
             // uiLabel2
             // 
@@ -211,7 +233,7 @@ namespace QL_XuatKhauGao
             this.uiLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.uiLabel2.Location = new System.Drawing.Point(77, 159);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(51, 20);
+            this.uiLabel2.Size = new System.Drawing.Size(42, 17);
             this.uiLabel2.TabIndex = 4;
             this.uiLabel2.Text = "Email";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,5 +271,6 @@ namespace QL_XuatKhauGao
         private Sunny.UI.UILabel uiLabel3;
         private Sunny.UI.UIButton uiButton1;
         private Sunny.UI.UILinkLabel uiLinkLabel1;
+        private Sunny.UI.UILinkLabel uiLinkLabel2;
     }
 }

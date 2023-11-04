@@ -17,14 +17,14 @@ namespace QL_XuatKhauGao.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhanQuyen()
         {
-            this.DangNhaps = new HashSet<DangNhap>();
+            this.Dangnhaps = new HashSet<Dangnhap>();
         }
     
         public int id { get; set; }
-        public string ten { get; set; }
-        public string mota { get; set; }
+        public string tenQuyen { get; set; }
+        public string Mota { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DangNhap> DangNhaps { get; set; }
+        public virtual ICollection<Dangnhap> Dangnhaps { get; set; }
     }
 }

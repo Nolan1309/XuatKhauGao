@@ -31,24 +31,26 @@ namespace QL_XuatKhauGao
             {
                 try
                 {
-                    DB_QLXuatKhauGaoEntities db = new DB_QLXuatKhauGaoEntities();
-                    DangNhap user = db.DangNhaps.Where(item => tb_email.Text.Trim() == item.email).FirstOrDefault();
+                    //DB_QLXuatKhauGaoEntities db = new DB_QLXuatKhauGaoEntities();
+                    Final_XuatKhauGaoEntities1 db = new Final_XuatKhauGaoEntities1();
+
+                    Dangnhap user = db.Dangnhaps.Where(item => tb_email.Text.Trim() == item.tendangnhap).FirstOrDefault();
                     if (user == null)
                     {
-                        DangNhap dn = new DangNhap();
-                        dn.email = tb_email.Text.Trim();
+                        Dangnhap dn = new Dangnhap();
+                        dn.tendangnhap = tb_email.Text.Trim();
                         dn.matkhau = tb_pas.Text.Trim();
-                        dn.isAdmin = 2;
-                        db.DangNhaps.Add(dn);
+                        dn.Idphanquyen = 2;
+                        db.Dangnhaps.Add(dn);
 
                         db.SaveChanges();
 
-                        KhachHang kh = new KhachHang() { 
-                            ten = tb_name.Text.Trim(),
-                            login_id = dn.id
+                        khachhang kh = new khachhang() { 
+                            tenkhachhang = tb_name.Text.Trim(),
+                            idLogin = dn.Idphanquyen
                         };
 
-                        db.KhachHangs.Add(kh);
+                        db.khachhangs.Add(kh);
 
                         db.SaveChanges();
 

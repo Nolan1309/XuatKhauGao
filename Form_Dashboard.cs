@@ -13,11 +13,13 @@ using QL_XuatKhauGao.Models;
 using QL_XuatKhauGao.UserControls ;
 
 using QL_XuatKhauGao.Helpers;
+using QL_XuatKhauGao.UserControls.Admin;
+
 namespace QL_XuatKhauGao
 {
     public partial class Form_Dashboard : Sunny.UI.UIForm
     {
-        DangNhap user;
+        Dangnhap user;
         /*        UserControlCreateProduct controlCreate;
                 UserControlListProduct controlList;*/
 
@@ -26,7 +28,7 @@ namespace QL_XuatKhauGao
         {
             InitializeComponent();
         }
-        public Form_Dashboard(DangNhap _user)
+        public Form_Dashboard(Dangnhap _user)
         {
             InitializeComponent();
             this.user = _user;
@@ -34,7 +36,7 @@ namespace QL_XuatKhauGao
 
         private void Form_Dashboard_Load(object sender, EventArgs e)
         {
-            btn_getInfo.Text = user.email;
+            btn_getInfo.Text = user.tendangnhap;
             UserControlMain control = new UserControlMain();
             MainControlClass.showControl(control, container_pd);
             /*controlCreate = new UserControlCreateProduct();
@@ -86,14 +88,22 @@ namespace QL_XuatKhauGao
 
         private void uiSymbolButton8_Click_1(object sender, EventArgs e)
         {
-            UserControlOrder control = new UserControlOrder();
+            ShowDonHang control = new ShowDonHang();
             MainControlClass.showControl(control, container_pd);
         }
 
         private void btn_getInfo_Click(object sender, EventArgs e)
         {
-            UserControlLGInfo control = new UserControlLGInfo(user);
-            MainControlClass.showControl(control, container_pd);
+            if (user.Idphanquyen == 2)
+            {
+                UserControlLGInfo control = new UserControlLGInfo(user);
+                MainControlClass.showControl(control, container_pd);
+            }
+            else
+            {
+                UserControlLGInfo control = new UserControlLGInfo(user);
+                MainControlClass.showControl(control, container_pd);
+            }
         }
     }
 }

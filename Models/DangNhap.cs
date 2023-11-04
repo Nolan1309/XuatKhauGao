@@ -12,21 +12,24 @@ namespace QL_XuatKhauGao.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DangNhap
+    public partial class Dangnhap
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DangNhap()
+        public Dangnhap()
         {
-            this.KhachHangs = new HashSet<KhachHang>();
+            this.khachhangs = new HashSet<khachhang>();
+            this.nhanviens = new HashSet<nhanvien>();
         }
     
-        public int id { get; set; }
+        public int IdDangnhap { get; set; }
+        public string tendangnhap { get; set; }
         public string matkhau { get; set; }
-        public Nullable<int> isAdmin { get; set; }
-        public string email { get; set; }
+        public Nullable<int> Idphanquyen { get; set; }
     
         public virtual PhanQuyen PhanQuyen { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhachHang> KhachHangs { get; set; }
+        public virtual ICollection<khachhang> khachhangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<nhanvien> nhanviens { get; set; }
     }
 }

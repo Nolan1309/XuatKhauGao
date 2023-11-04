@@ -31,15 +31,16 @@ namespace QL_XuatKhauGao
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.container_pd = new System.Windows.Forms.Panel();
             this.uiSymbolButton8 = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton7 = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_logout = new Sunny.UI.UISymbolButton();
             this.btn_getInfo = new Sunny.UI.UISymbolButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.container_pd = new System.Windows.Forms.Panel();
+            this.uiSymbolButton3 = new Sunny.UI.UISymbolButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,6 +60,7 @@ namespace QL_XuatKhauGao
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.uiSymbolButton3);
             this.panel3.Controls.Add(this.uiSymbolButton8);
             this.panel3.Controls.Add(this.uiSymbolButton7);
             this.panel3.Controls.Add(this.uiSymbolButton2);
@@ -68,24 +70,6 @@ namespace QL_XuatKhauGao
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(248, 408);
             this.panel3.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btn_logout);
-            this.panel2.Controls.Add(this.btn_getInfo);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 408);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(248, 136);
-            this.panel2.TabIndex = 2;
-            // 
-            // container_pd
-            // 
-            this.container_pd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_pd.Location = new System.Drawing.Point(248, 35);
-            this.container_pd.Name = "container_pd";
-            this.container_pd.Size = new System.Drawing.Size(759, 544);
-            this.container_pd.TabIndex = 2;
             // 
             // uiSymbolButton8
             // 
@@ -114,7 +98,7 @@ namespace QL_XuatKhauGao
             this.uiSymbolButton8.Style = Sunny.UI.UIStyle.Custom;
             this.uiSymbolButton8.StyleCustomMode = true;
             this.uiSymbolButton8.TabIndex = 7;
-            this.uiSymbolButton8.Text = "Đơn Hàng";
+            this.uiSymbolButton8.Text = "Giao dịch";
             this.uiSymbolButton8.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.uiSymbolButton8.Click += new System.EventHandler(this.uiSymbolButton8_Click_1);
             // 
@@ -211,6 +195,16 @@ namespace QL_XuatKhauGao
             this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_logout);
+            this.panel2.Controls.Add(this.btn_getInfo);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 408);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(248, 136);
+            this.panel2.TabIndex = 2;
+            // 
             // btn_logout
             // 
             this.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -273,6 +267,44 @@ namespace QL_XuatKhauGao
             this.btn_getInfo.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btn_getInfo.Click += new System.EventHandler(this.btn_getInfo_Click);
             // 
+            // container_pd
+            // 
+            this.container_pd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_pd.Location = new System.Drawing.Point(248, 35);
+            this.container_pd.Name = "container_pd";
+            this.container_pd.Size = new System.Drawing.Size(759, 544);
+            this.container_pd.TabIndex = 2;
+            // 
+            // uiSymbolButton3
+            // 
+            this.uiSymbolButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiSymbolButton3.FillColor = System.Drawing.Color.White;
+            this.uiSymbolButton3.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.uiSymbolButton3.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.uiSymbolButton3.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.uiSymbolButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.uiSymbolButton3.ForeColor = System.Drawing.Color.Black;
+            this.uiSymbolButton3.ForeHoverColor = System.Drawing.Color.Black;
+            this.uiSymbolButton3.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.uiSymbolButton3.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.uiSymbolButton3.Image = global::QL_XuatKhauGao.Properties.Resources.bill_invoice_icon_179550;
+            this.uiSymbolButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiSymbolButton3.Location = new System.Drawing.Point(0, 268);
+            this.uiSymbolButton3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton3.Name = "uiSymbolButton3";
+            this.uiSymbolButton3.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
+            this.uiSymbolButton3.RectColor = System.Drawing.Color.Transparent;
+            this.uiSymbolButton3.RectHoverColor = System.Drawing.Color.Transparent;
+            this.uiSymbolButton3.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.uiSymbolButton3.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.uiSymbolButton3.Size = new System.Drawing.Size(248, 67);
+            this.uiSymbolButton3.Style = Sunny.UI.UIStyle.Custom;
+            this.uiSymbolButton3.StyleCustomMode = true;
+            this.uiSymbolButton3.TabIndex = 8;
+            this.uiSymbolButton3.Text = "Báo cáo";
+            this.uiSymbolButton3.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            // 
             // Form_Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -304,5 +336,6 @@ namespace QL_XuatKhauGao
         public System.Windows.Forms.Panel container_pd;
         private Sunny.UI.UISymbolButton uiSymbolButton7;
         private Sunny.UI.UISymbolButton uiSymbolButton8;
+        private Sunny.UI.UISymbolButton uiSymbolButton3;
     }
 }

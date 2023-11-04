@@ -30,17 +30,32 @@ namespace QL_XuatKhauGao
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.container_pd = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.uiSymbolButton8 = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_getInfo = new Sunny.UI.UISymbolButton();
             this.btn_logout = new Sunny.UI.UISymbolButton();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.container_pd = new System.Windows.Forms.Panel();
+            this.panel_back = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.uiSymbolButton4 = new Sunny.UI.UISymbolButton();
+            this.btnBack = new Sunny.UI.UISymbolButton();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel_back.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,28 +65,10 @@ namespace QL_XuatKhauGao
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 536);
+            this.panel1.Size = new System.Drawing.Size(246, 571);
             this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btn_getInfo);
-            this.panel2.Controls.Add(this.btn_logout);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 400);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 136);
-            this.panel2.TabIndex = 0;
-            // 
-            // container_pd
-            // 
-            this.container_pd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_pd.Location = new System.Drawing.Point(246, 35);
-            this.container_pd.Name = "container_pd";
-            this.container_pd.Size = new System.Drawing.Size(660, 536);
-            this.container_pd.TabIndex = 2;
             // 
             // panel3
             // 
@@ -81,7 +78,7 @@ namespace QL_XuatKhauGao
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(246, 400);
+            this.panel3.Size = new System.Drawing.Size(246, 435);
             this.panel3.TabIndex = 1;
             // 
             // uiSymbolButton8
@@ -113,6 +110,7 @@ namespace QL_XuatKhauGao
             this.uiSymbolButton8.TabIndex = 8;
             this.uiSymbolButton8.Text = "Đơn Hàng";
             this.uiSymbolButton8.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.uiSymbolButton8.Click += new System.EventHandler(this.uiSymbolButton8_Click);
             // 
             // uiSymbolButton2
             // 
@@ -174,7 +172,16 @@ namespace QL_XuatKhauGao
             this.uiSymbolButton1.TabIndex = 4;
             this.uiSymbolButton1.Text = "Trang Chủ";
             this.uiSymbolButton1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_getInfo);
+            this.panel2.Controls.Add(this.btn_logout);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 435);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(246, 136);
+            this.panel2.TabIndex = 0;
             // 
             // btn_getInfo
             // 
@@ -238,20 +245,169 @@ namespace QL_XuatKhauGao
             this.btn_logout.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.container_pd);
+            this.panel4.Controls.Add(this.panel_back);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(246, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(660, 571);
+            this.panel4.TabIndex = 3;
+            // 
+            // container_pd
+            // 
+            this.container_pd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_pd.Location = new System.Drawing.Point(0, 61);
+            this.container_pd.Name = "container_pd";
+            this.container_pd.Size = new System.Drawing.Size(660, 510);
+            this.container_pd.TabIndex = 1;
+            // 
+            // panel_back
+            // 
+            this.panel_back.BackColor = System.Drawing.Color.White;
+            this.panel_back.Controls.Add(this.panel5);
+            this.panel_back.Controls.Add(this.btnBack);
+            this.panel_back.Controls.Add(this.panel8);
+            this.panel_back.Controls.Add(this.panel7);
+            this.panel_back.Controls.Add(this.panel6);
+            this.panel_back.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_back.Location = new System.Drawing.Point(0, 0);
+            this.panel_back.Name = "panel_back";
+            this.panel_back.Size = new System.Drawing.Size(660, 61);
+            this.panel_back.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel9);
+            this.panel5.Controls.Add(this.uiSymbolButton4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(550, 24);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(86, 37);
+            this.panel5.TabIndex = 1;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.uiLabel1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(42, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(44, 35);
+            this.panel9.TabIndex = 3;
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.AutoSize = true;
+            this.uiLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.uiLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.uiLabel1.ForeColor = System.Drawing.Color.White;
+            this.uiLabel1.Location = new System.Drawing.Point(0, 0);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Padding = new System.Windows.Forms.Padding(2);
+            this.uiLabel1.Size = new System.Drawing.Size(17, 17);
+            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel1.TabIndex = 2;
+            this.uiLabel1.Text = "1";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiSymbolButton4
+            // 
+            this.uiSymbolButton4.BackColor = System.Drawing.Color.Transparent;
+            this.uiSymbolButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uiSymbolButton4.FillColor = System.Drawing.Color.Transparent;
+            this.uiSymbolButton4.FillColor2 = System.Drawing.Color.Transparent;
+            this.uiSymbolButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiSymbolButton4.ForeColor = System.Drawing.Color.Black;
+            this.uiSymbolButton4.Image = global::QL_XuatKhauGao.Properties.Resources.shoppingcart_120371;
+            this.uiSymbolButton4.Location = new System.Drawing.Point(0, 0);
+            this.uiSymbolButton4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton4.Name = "uiSymbolButton4";
+            this.uiSymbolButton4.RectColor = System.Drawing.Color.Transparent;
+            this.uiSymbolButton4.Size = new System.Drawing.Size(42, 37);
+            this.uiSymbolButton4.Style = Sunny.UI.UIStyle.Custom;
+            this.uiSymbolButton4.TabIndex = 0;
+            this.uiSymbolButton4.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.uiSymbolButton4.Click += new System.EventHandler(this.uiSymbolButton4_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBack.FillColor = System.Drawing.Color.White;
+            this.btnBack.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.btnBack.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.btnBack.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.ForeHoverColor = System.Drawing.Color.Black;
+            this.btnBack.ForePressColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.btnBack.ForeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.btnBack.Image = global::QL_XuatKhauGao.Properties.Resources.login_arrow_symbol_entering_back_into_a_square_icon_icons_com_73221;
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBack.Location = new System.Drawing.Point(24, 24);
+            this.btnBack.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.RectColor = System.Drawing.Color.Transparent;
+            this.btnBack.RectHoverColor = System.Drawing.Color.Transparent;
+            this.btnBack.RectPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.btnBack.RectSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.btnBack.Size = new System.Drawing.Size(149, 37);
+            this.btnBack.Style = Sunny.UI.UIStyle.Custom;
+            this.btnBack.StyleCustomMode = true;
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "Quay lại";
+            this.btnBack.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(636, 24);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(24, 37);
+            this.panel8.TabIndex = 22;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 24);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(24, 37);
+            this.panel7.TabIndex = 21;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(660, 24);
+            this.panel6.TabIndex = 20;
+            // 
             // Form_User
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(906, 571);
-            this.Controls.Add(this.container_pd);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "Form_User";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_User";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.ZoomScaleRect = new System.Drawing.Rectangle(19, 19, 800, 450);
             this.Load += new System.EventHandler(this.Form_User_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel_back.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -261,10 +417,21 @@ namespace QL_XuatKhauGao
         private System.Windows.Forms.Panel panel2;
         private Sunny.UI.UISymbolButton btn_getInfo;
         private Sunny.UI.UISymbolButton btn_logout;
-        private System.Windows.Forms.Panel container_pd;
         private System.Windows.Forms.Panel panel3;
         private Sunny.UI.UISymbolButton uiSymbolButton1;
         private Sunny.UI.UISymbolButton uiSymbolButton2;
         private Sunny.UI.UISymbolButton uiSymbolButton8;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel container_pd;
+        private System.Windows.Forms.Panel panel_back;
+        private Sunny.UI.UISymbolButton btnBack;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private Sunny.UI.UISymbolButton uiSymbolButton4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel9;
+        private Sunny.UI.UILabel uiLabel1;
     }
 }

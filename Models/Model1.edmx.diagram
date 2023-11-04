@@ -13,6 +13,23 @@
         <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_DangNhap_PhanQuyen" ManuallyRouted="false" />
         <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_KhachHang_DangNhap" ManuallyRouted="false" />
         <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_SanPham_DanhMuc" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_QLXuatKhauGaoModel.ChiTietHoaDon" Width="1.5" PointX="9.75" PointY="3.25" />
+        <EntityTypeShape EntityType="DB_QLXuatKhauGaoModel.HoaDon" Width="1.5" PointX="7.5" PointY="0.75" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_ChiTietHoaDon_HoaDon" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_ChiTietHoaDon_SanPham" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_HoaDon_KhachHang" />
+        <EntityTypeShape EntityType="DB_QLXuatKhauGaoModel.ChiTietLC" Width="1.5" PointX="9.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DB_QLXuatKhauGaoModel.NgayQuyetDinh" Width="1.5" PointX="9.75" PointY="16.625" />
+        <EntityTypeShape EntityType="DB_QLXuatKhauGaoModel.NhanVien" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_QLXuatKhauGaoModel.PhongBan" Width="1.5" PointX="3" PointY="13.75" />
+        <EntityTypeShape EntityType="DB_QLXuatKhauGaoModel.sysdiagram" Width="1.5" PointX="5.375" PointY="9.875" />
+        <EntityTypeShape EntityType="DB_QLXuatKhauGaoModel.VanChuyen" Width="1.5" PointX="9.75" PointY="13.75" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_ChiTietLC_HoaDon" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_NhanVien_DangNhap" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_HoaDon_NhanVien" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_NgayQuyetDinh_HoaDon" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_VanChuyen_HoaDon" />
+        <AssociationConnector Association="DB_QLXuatKhauGaoModel.FK_NhanVien_PhongBan" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

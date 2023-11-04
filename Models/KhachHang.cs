@@ -12,14 +12,23 @@ namespace QL_XuatKhauGao.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KhachHang
+    public partial class khachhang
     {
-        public int id { get; set; }
-        public string ten { get; set; }
-        public string diachi { get; set; }
-        public string sdt { get; set; }
-        public int login_id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public khachhang()
+        {
+            this.HoaDons = new HashSet<HoaDon>();
+        }
     
-        public virtual DangNhap DangNhap { get; set; }
+        public int idkhachhang { get; set; }
+        public string tenkhachhang { get; set; }
+        public string sdtKH { get; set; }
+        public string diachi { get; set; }
+        public string email { get; set; }
+        public Nullable<int> idLogin { get; set; }
+    
+        public virtual Dangnhap Dangnhap { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDon> HoaDons { get; set; }
     }
 }

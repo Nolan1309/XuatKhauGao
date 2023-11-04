@@ -118,14 +118,38 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bill_invoice_icon_179550" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bill_invoice_icon_179550.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_remove_bin_icon-icons.com_72400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_remove_bin_icon-icons.com_72400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login-arrow-symbol-entering-back-into-a-square_icon-icons.com_73221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Content\Images\login-arrow-symbol-entering-back-into-a-square_icon-icons.com_73221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit_icon-icons.com_71853" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit_icon-icons.com_71853.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_person_customer_icon_196942" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_person_customer_icon_196942.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus_new_create_more_icon_192478" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_new_create_more_icon_192478.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excel_office_4658" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Content\Images\excel_office_4658.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ad_product_icon_155850" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ad_product_icon_155850.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3844470-home-house_110332" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3844470-home-house_110332.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="exit-logout-sign-out_114030" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit-logout-sign-out_114030.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="executive_person_icon-icons.com_72414" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\executive_person_icon-icons.com_72414.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3844470-home-house_110332" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3844470-home-house_110332.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="223907-P1OHRX-813" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\223907-P1OHRX-813.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,22 +157,10 @@
   <data name="account_avatar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account_avatar2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit_icon-icons.com_71853" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit_icon-icons.com_71853.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3844432-magnifier-search-zoom_110300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Content\Images\3844432-magnifier-search-zoom_110300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plus_new_create_more_icon_192478" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plus_new_create_more_icon_192478.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ad_product_icon_155850" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ad_product_icon_155850.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete_remove_bin_icon-icons.com_72400" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete_remove_bin_icon-icons.com_72400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bill_invoice_icon_179550" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bill_invoice_icon_179550.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_person_customer_icon_196942" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_person_customer_icon_196942.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shoppingcart_120371" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Content\Images\shoppingcart_120371.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
