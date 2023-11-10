@@ -29,11 +29,12 @@ namespace QL_XuatKhauGao.UserControls.Admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowDonHang));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,6 +48,8 @@ namespace QL_XuatKhauGao.UserControls.Admin
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uiGroupBox2 = new Sunny.UI.UIGroupBox();
+            this.uiTextBox9 = new Sunny.UI.UITextBox();
+            this.uiLabel9 = new Sunny.UI.UILabel();
             this.uiTextBox15 = new Sunny.UI.UITextBox();
             this.uiLabel16 = new Sunny.UI.UILabel();
             this.uiTextBox14 = new Sunny.UI.UITextBox();
@@ -66,7 +69,6 @@ namespace QL_XuatKhauGao.UserControls.Admin
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiButton2 = new Sunny.UI.UIButton();
             this.uiButton1 = new Sunny.UI.UIButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uiTextBox8 = new Sunny.UI.UITextBox();
             this.uiLabel8 = new Sunny.UI.UILabel();
             this.uiTextBox7 = new Sunny.UI.UITextBox();
@@ -80,13 +82,14 @@ namespace QL_XuatKhauGao.UserControls.Admin
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.uiTextBox9 = new Sunny.UI.UITextBox();
-            this.uiLabel9 = new Sunny.UI.UILabel();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.printDialog2 = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             this.uiPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.uiPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -131,21 +134,21 @@ namespace QL_XuatKhauGao.UserControls.Admin
             // 
             // uiDataGridView1
             // 
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.uiDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.uiDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.uiDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.uiDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.uiDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.uiDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.uiDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.uiDataGridView1.ColumnHeadersHeight = 35;
             this.uiDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.uiDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -156,34 +159,34 @@ namespace QL_XuatKhauGao.UserControls.Admin
             this.Column5,
             this.Column7,
             this.Column6});
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.uiDataGridView1.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.uiDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.uiDataGridView1.EnableHeadersVisualStyles = false;
             this.uiDataGridView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             this.uiDataGridView1.Location = new System.Drawing.Point(18, 376);
             this.uiDataGridView1.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.uiDataGridView1.Name = "uiDataGridView1";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.uiDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.uiDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.uiDataGridView1.ScrollBarRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiDataGridView1.SelectedIndex = -1;
             this.uiDataGridView1.Size = new System.Drawing.Size(1317, 239);
@@ -236,7 +239,7 @@ namespace QL_XuatKhauGao.UserControls.Admin
             // 
             // uiGroupBox2
             // 
-            this.uiGroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.uiGroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiGroupBox2.Controls.Add(this.uiTextBox9);
             this.uiGroupBox2.Controls.Add(this.uiLabel9);
@@ -260,6 +263,33 @@ namespace QL_XuatKhauGao.UserControls.Admin
             this.uiGroupBox2.TabIndex = 34;
             this.uiGroupBox2.Text = "Hóa đơn";
             this.uiGroupBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiTextBox9
+            // 
+            this.uiTextBox9.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
+            this.uiTextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiTextBox9.Location = new System.Drawing.Point(194, 252);
+            this.uiTextBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox9.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox9.Name = "uiTextBox9";
+            this.uiTextBox9.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox9.ShowText = false;
+            this.uiTextBox9.Size = new System.Drawing.Size(300, 29);
+            this.uiTextBox9.TabIndex = 17;
+            this.uiTextBox9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox9.Watermark = "";
+            // 
+            // uiLabel9
+            // 
+            this.uiLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.uiLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiLabel9.Location = new System.Drawing.Point(25, 252);
+            this.uiLabel9.Name = "uiLabel9";
+            this.uiLabel9.Size = new System.Drawing.Size(149, 29);
+            this.uiLabel9.TabIndex = 18;
+            this.uiLabel9.Text = "Địa điểm giao";
+            this.uiLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiTextBox15
             // 
@@ -532,15 +562,6 @@ namespace QL_XuatKhauGao.UserControls.Admin
             this.uiButton1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.Location = new System.Drawing.Point(453, 127);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(277, 198);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // uiTextBox8
             // 
             this.uiTextBox8.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
@@ -692,32 +713,28 @@ namespace QL_XuatKhauGao.UserControls.Admin
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // uiTextBox9
+            // printPreviewDialog1
             // 
-            this.uiTextBox9.ButtonSymbolOffset = new System.Drawing.Point(0, 0);
-            this.uiTextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiTextBox9.Location = new System.Drawing.Point(194, 252);
-            this.uiTextBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox9.MinimumSize = new System.Drawing.Size(1, 16);
-            this.uiTextBox9.Name = "uiTextBox9";
-            this.uiTextBox9.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox9.ShowText = false;
-            this.uiTextBox9.Size = new System.Drawing.Size(300, 29);
-            this.uiTextBox9.TabIndex = 17;
-            this.uiTextBox9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox9.Watermark = "";
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
-            // uiLabel9
+            // pictureBox1
             // 
-            this.uiLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.uiLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiLabel9.Location = new System.Drawing.Point(25, 252);
-            this.uiLabel9.Name = "uiLabel9";
-            this.uiLabel9.Size = new System.Drawing.Size(149, 29);
-            this.uiLabel9.TabIndex = 18;
-            this.uiLabel9.Text = "Địa điểm giao";
-            this.uiLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox1.Location = new System.Drawing.Point(453, 127);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(277, 198);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // printDialog2
+            // 
+            this.printDialog2.UseEXDialog = true;
             // 
             // ShowDonHang
             // 
@@ -744,8 +761,8 @@ namespace QL_XuatKhauGao.UserControls.Admin
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).EndInit();
             this.uiGroupBox2.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.uiPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -800,5 +817,7 @@ namespace QL_XuatKhauGao.UserControls.Admin
         private System.Windows.Forms.PrintDialog printDialog1;
         private Sunny.UI.UITextBox uiTextBox9;
         private Sunny.UI.UILabel uiLabel9;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.PrintDialog printDialog2;
     }
 }

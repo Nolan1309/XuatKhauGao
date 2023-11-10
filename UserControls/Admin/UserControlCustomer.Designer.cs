@@ -58,6 +58,7 @@ namespace QL_XuatKhauGao.UserControls
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.uiLabel2 = new Sunny.UI.UILabel();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.uiPanel2.SuspendLayout();
@@ -212,7 +213,8 @@ namespace QL_XuatKhauGao.UserControls
             this.Column1,
             this.Column2,
             this.Column4,
-            this.Column3});
+            this.Column3,
+            this.Column5});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -245,6 +247,7 @@ namespace QL_XuatKhauGao.UserControls
             this.uiDataGridView1.SelectedIndex = -1;
             this.uiDataGridView1.Size = new System.Drawing.Size(926, 294);
             this.uiDataGridView1.TabIndex = 0;
+            this.uiDataGridView1.SelectionChanged += new System.EventHandler(this.uiDataGridView1_SelectionChanged);
             // 
             // Column1
             // 
@@ -276,9 +279,7 @@ namespace QL_XuatKhauGao.UserControls
             this.uiPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel6.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel6.Name = "uiPanel6";
-            this.uiPanel6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiPanel6.Size = new System.Drawing.Size(926, 104);
-            this.uiPanel6.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel6.TabIndex = 1;
             this.uiPanel6.Text = null;
             this.uiPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -308,6 +309,7 @@ namespace QL_XuatKhauGao.UserControls
             this.uiButton3.TabIndex = 3;
             this.uiButton3.Text = "Cập nhật";
             this.uiButton3.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.uiButton3.Click += new System.EventHandler(this.uiButton3_Click);
             // 
             // uiPanel5
             // 
@@ -319,9 +321,7 @@ namespace QL_XuatKhauGao.UserControls
             this.uiPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel5.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel5.Name = "uiPanel5";
-            this.uiPanel5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiPanel5.Size = new System.Drawing.Size(926, 64);
-            this.uiPanel5.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel5.TabIndex = 0;
             this.uiPanel5.Text = null;
             this.uiPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -337,6 +337,7 @@ namespace QL_XuatKhauGao.UserControls
             this.uiButton2.TabIndex = 3;
             this.uiButton2.Text = "Tìm";
             this.uiButton2.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.uiButton2.Click += new System.EventHandler(this.uiButton2_Click);
             // 
             // uiTextBox1
             // 
@@ -364,9 +365,7 @@ namespace QL_XuatKhauGao.UserControls
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.uiPanel3.Size = new System.Drawing.Size(926, 62);
-            this.uiPanel3.Style = Sunny.UI.UIStyle.Custom;
             this.uiPanel3.TabIndex = 0;
             this.uiPanel3.Text = null;
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -381,8 +380,9 @@ namespace QL_XuatKhauGao.UserControls
             this.uiButton1.Name = "uiButton1";
             this.uiButton1.Size = new System.Drawing.Size(166, 41);
             this.uiButton1.TabIndex = 2;
-            this.uiButton1.Text = "Thêm khách hàng";
+            this.uiButton1.Text = "Import DATA";
             this.uiButton1.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // uiLabel2
             // 
@@ -394,6 +394,11 @@ namespace QL_XuatKhauGao.UserControls
             this.uiLabel2.TabIndex = 1;
             this.uiLabel2.Text = "Danh sách khách hàng";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Email";
+            this.Column5.Name = "Column5";
             // 
             // UserControlCustomer
             // 
@@ -448,5 +453,6 @@ namespace QL_XuatKhauGao.UserControls
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UIButton uiButton4;
         private Sunny.UI.UIButton uiButton3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

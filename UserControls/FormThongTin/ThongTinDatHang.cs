@@ -17,7 +17,7 @@ namespace QL_XuatKhauGao.UserControls.FormThongTin
     {
         string idhd;
         string makh;
-        //List<QuocGia> quocGias;
+     
         Final_XuatKhauGaoEntities1 db = new Final_XuatKhauGaoEntities1();
         DataProvider connec = new DataProvider();
         public ThongTinDatHang()

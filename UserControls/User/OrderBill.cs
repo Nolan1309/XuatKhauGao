@@ -65,7 +65,9 @@ namespace QL_XuatKhauGao.UserControls.Admin
                     ct.MaSanPham = item.MaSanPham;
                     ct.DonGia = item.Gia;
                     ct.SoLuong = item.Soluong;
-                    ct.TongTien = item.Gia * Convert.ToDouble(item.Soluong);
+
+                    //ct.TongTien = (item.Gia * Convert.ToDouble(item.Soluong)) + (0.2 * (item.Gia * Convert.ToDouble(item.Soluong)));
+                    ct.TongTien = ((item.Gia + item.Gia * 0.2) * Convert.ToDouble(item.Soluong));
                     total += Convert.ToDouble(ct.TongTien);
                     order_detail.Add(ct);
                     container_grid.Rows.Add(new object[] { image, item?.TenSanPham, item?.Gia.ToString(), item?.Soluong.ToString(), ct.TongTien });

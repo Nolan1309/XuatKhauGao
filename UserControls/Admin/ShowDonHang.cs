@@ -52,7 +52,7 @@ namespace QL_XuatKhauGao.UserControls.Admin
                     adapter.Fill(dataTable);
                     foreach (DataRow item in dataTable.Rows)
                     {
-                        
+
                         string ngayOrder = ((DateTime)item["NgayOrder"]).ToString("dd/MM/yyyy");
                         string ngayNhanHang = ((DateTime)item["NgayNhanHangdukien"]).ToString("dd/MM/yyyy");
 
@@ -63,7 +63,7 @@ namespace QL_XuatKhauGao.UserControls.Admin
                             item["TenNguoiNhan"],
                             item["DiaChiDen"],
                             string.Format("{0:#,##0}", item["GiaTriHangHoa"]),
-                            
+
                             string.Format("{0:#,##0}", item["TongTienHoaDon"]));
 
                     }
@@ -193,49 +193,52 @@ namespace QL_XuatKhauGao.UserControls.Admin
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
-            list.Clear();
-            using (SqlConnection connection = sql.sqlConnection())
-            {
-                connection.Open();
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
 
-                string query = "SELECT SP.TenSanPham, CHD.SoLuong, CHD.DonGia, CHD.TongTien " +
-                               "FROM ChiTietHoaDon AS CHD " +
-                               "INNER JOIN SanPham AS SP ON CHD.MaSanPham = SP.MaSanPham " +
-                               "WHERE CHD.MaHoaDon = @MaHoaDon";
+            //list.Clear();
+            //using (SqlConnection connection = sql.sqlConnection())
+            //{
+            //    connection.Open();
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    string check = uiTextBox11.Text;
-                    cmd.Parameters.AddWithValue("@MaHoaDon", check);
-                    Product_Print sp;
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            sp = new Product_Print();
+            //    string query = "SELECT SP.TenSanPham, CHD.SoLuong, CHD.DonGia, CHD.TongTien " +
+            //                   "FROM ChiTietHoaDon AS CHD " +
+            //                   "INNER JOIN SanPham AS SP ON CHD.MaSanPham = SP.MaSanPham " +
+            //                   "WHERE CHD.MaHoaDon = @MaHoaDon";
 
-                            sp.tenSanpham = reader["TenSanPham"].ToString();
-                            sp.soluong = Convert.ToInt32(reader["SoLuong"].ToString());
-                            sp.dongia = Convert.ToDouble(reader["DonGia"].ToString());
-                            sp.tongtien = Convert.ToDouble(reader["TongTien"].ToString());
-                            list.Add(sp);
+            //    using (SqlCommand cmd = new SqlCommand(query, connection))
+            //    {
+            //        string check = uiTextBox11.Text;
+            //        cmd.Parameters.AddWithValue("@MaHoaDon", check);
+            //        Product_Print sp;
+            //        using (SqlDataReader reader = cmd.ExecuteReader())
+            //        {
+            //            while (reader.Read())
+            //            {
+            //                sp = new Product_Print();
 
-                        }
-                    }
-                }
-                connection.Close();
-            }
-            PrintDocument printDocument = new PrintDocument();
-            printDocument.PrintPage += new PrintPageEventHandler(PrintPage);
+            //                sp.tenSanpham = reader["TenSanPham"].ToString();
+            //                sp.soluong = Convert.ToInt32(reader["SoLuong"].ToString());
+            //                sp.dongia = Convert.ToDouble(reader["DonGia"].ToString());
+            //                sp.tongtien = Convert.ToDouble(reader["TongTien"].ToString());
+            //                list.Add(sp);
 
-            PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = printDocument;
+            //            }
+            //        }
+            //    }
+            //    connection.Close();
+            //}
+            //PrintDocument printDocument = new PrintDocument();
+            //printDocument.PrintPage += new PrintPageEventHandler(PrintPage);
+
+            //PrintDialog printDialog = new PrintDialog();
+            //printDialog.Document = printDocument;
 
 
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                printDocument.Print();
-            }
+            //if (printDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    printDocument.Print();
+            //}
         }
         private void PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -335,11 +338,128 @@ namespace QL_XuatKhauGao.UserControls.Admin
             GenerateQRCode(uiTextBox7.Text, uiTextBox6.Text, diaChiVanChuyen, tongTienHoaDon);
         }
 
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            List<ChiTietHoaDon> cthd = new List<ChiTietHoaDon>();
+            ChiTietHoaDon model = null;
+            string mahoadon = uiTextBox11.Text;
+            using (SqlConnection connection =sql.sqlConnection())
+            {
+                connection.Open();
+                string queryString = "select TenSanPham,ChiTietHoaDon.SoLuong,ChiTietHoaDon.DonGia,ChiTietHoaDon.TongTien from ChiTietHoaDon ,SanPham where MaHoaDon = '"+ mahoadon+"' and ChiTietHoaDon.MaSanPham = SanPham.MaSanPham";
+                using (SqlCommand command = new SqlCommand(queryString, connection))
+                {               
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            model = new ChiTietHoaDon();
+                            model.SoLuong = Convert.ToInt32(reader["SoLuong"].ToString());
+
+                            model.SanPham = new SanPham();
+                            model.SanPham.TenSanPham = reader["TenSanPham"].ToString();
+                           
+                            model.DonGia = Convert.ToDouble(reader["DonGia"].ToString());
+                            model.TongTien = Convert.ToDouble(reader["TongTien"].ToString());
+                            cthd.Add(model);
+                        }
+                    }
+                }
+            }
+            float centerX = e.MarginBounds.Width / 2;
+            float centerY = e.MarginBounds.Height / 2;
+
+            // Define the title text
+            string title = "HÓA ĐƠN THANH TOÁN";
+
+            // Measure the size of the title text
+            SizeF textSize = e.Graphics.MeasureString(title, new Font("Arial", 24, FontStyle.Bold));
+
+            // Calculate the position for the title to be centered
+            float titleX = centerX - (textSize.Width / 2);
+            float titleY = centerY - (textSize.Height / 2);
+
+            // Draw the centered title
+            e.Graphics.DrawString(title, new Font("Arial", 24, FontStyle.Bold), Brushes.Black, new PointF(250, 60));
+            e.Graphics.DrawString("Số hóa đơn : ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(330, 105));
+            e.Graphics.DrawString(uiTextBox11.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new PointF(450, 105));
+
+            e.Graphics.DrawString("Date: " + DateTime.Now.ToShortDateString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 160));
+
+            e.Graphics.DrawString("Compary Name: " + "GAO NGON NHAT", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 190));
+            e.Graphics.DrawString("Client Name: " + uiTextBox6.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 220));
+            e.Graphics.DrawString("Address: " + uiTextBox5.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 250));
+
+
+
+            e.Graphics.DrawString("------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 325));
+
+            e.Graphics.DrawString("Item Name", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(30, 345));
+            e.Graphics.DrawString("Quantity", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(380, 345));
+            e.Graphics.DrawString("Unit Price", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(510, 345));
+            e.Graphics.DrawString("Total Price", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(660, 345));
+            e.Graphics.DrawString("------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 360));
+            int yPos = 385;
+
+            foreach (ChiTietHoaDon item in cthd)
+            {
+                e.Graphics.DrawString(item.SanPham.TenSanPham, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(30, yPos));
+                e.Graphics.DrawString(item.SoLuong.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(400, yPos));
+                e.Graphics.DrawString(item.DonGia.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(525, yPos));
+                e.Graphics.DrawString(item.TongTien.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(675, yPos));
+                yPos += 30;
+            }
+            e.Graphics.DrawString("------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, yPos));
+
+            double tongTienHoaDon = 0;
+            double tongTienHoaDonVAT = 0;
+            using (SqlConnection connection = sql.sqlConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SearchHoaDonUser", connection))
+                {
+                    string mahd = uiTextBox11.Text;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@idhoadon", mahd));
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tongTienHoaDon = Convert.ToDouble(reader["GiaTriHangHoa"]);
+
+                            tongTienHoaDonVAT = Convert.ToDouble(reader["TongTienBaoGomThue"]);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy hóa đơn với mã này.");
+                        }
+                    }
+                }
+            }
+            e.Graphics.DrawString("Total Amount:      $" + tongTienHoaDon, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(550, yPos + 30));
+            e.Graphics.DrawString("VAT:                   $" + (tongTienHoaDonVAT-tongTienHoaDon), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(550, yPos + 60));
+            e.Graphics.DrawString("Total To Pay:      $" + tongTienHoaDonVAT, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(550, yPos + 90));
+
+            //// reset the variables
+            //numberOfItemsPerPage = 0;
+            //numberOfItemsPrintedSoFar = 0;
+
+            e.Graphics.DrawString("Người mua hàng", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(90, 800));
+            e.Graphics.DrawString("Người bán hàng", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(600, 800));
+
+
+            e.Graphics.DrawString("(Kí và ghi rõ họ tên)", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(90, 830));
+            e.Graphics.DrawString("(Kí và ghi rõ họ tên)", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(600, 830));
+
+
+
+
+
+
+
+
+
 
         }
-
-
     }
 }
